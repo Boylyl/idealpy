@@ -1,3 +1,4 @@
+import os
 import logging
 from telegram import InlineQueryResultArticle, InputTextMessageContent, Update
 from telegram.ext import Application, CommandHandler, InlineQueryHandler, ContextTypes, MessageHandler, filters
@@ -11,7 +12,7 @@ logging.basicConfig(
 )
 
 # Token bot dari @BotFather
-BOT_TOKEN = "8188917154:AAFW8Vx_e30McMUb7GNvLMs3I0Dynf0wLO0"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 def calculate_bmi(weight, height):
     """Menghitung BMI dan memberikan kategori"""
